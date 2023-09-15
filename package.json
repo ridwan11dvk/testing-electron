@@ -1,0 +1,16 @@
+{
+  "name": "belajar-elektron",
+  "version": "1.0.0",
+  "description": "for stdying",
+  "main": "main.js",
+  "license": "MIT",
+  "scripts": {
+    "start": "electron ."
+  },
+  "devDependencies": {
+    "electron": "^26.2.1"
+  },
+  "dependencies": {
+    "electron-util": "^0.17.2"
+  }
+}
