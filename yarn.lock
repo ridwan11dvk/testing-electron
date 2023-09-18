@@ -157,6 +157,11 @@ electron-is-dev@^1.1.0:
   resolved "https://registry.yarnpkg.com/electron-is-dev/-/electron-is-dev-1.2.0.tgz#2e5cea0a1b3ccf1c86f577cee77363ef55deb05e"
   integrity sha512-R1oD5gMBPS7PVU8gJwH6CtT0e6VSoD0+SzSnYpNm+dBkcijgA+K7VAMHDfnRq/lkKPZArpzplTW6jfiMYosdzw==
 
+electron-screenshot@^1.0.5:
+  version "1.0.5"
+  resolved "https://registry.yarnpkg.com/electron-screenshot/-/electron-screenshot-1.0.5.tgz#8cd46c4eb3d86b0401b0408228bdce033c535369"
+  integrity sha512-nTLZZ8urMraLwL0KYb5dz2o76cRPx+6WBQ0sOujqqfcUe1k/alj0UoLPmQpFs8VuIccF4K7ZNpeK95h0ob8p6Q==
+
 electron-util@^0.17.2:
   version "0.17.2"
   resolved "https://registry.yarnpkg.com/electron-util/-/electron-util-0.17.2.tgz#6b0fe798ae0154585e7e0e96a707bfeae592be05"

@@ -4,6 +4,12 @@
   "description": "for stdying",
   "main": "main.js",
   "license": "MIT",
+  "build": {
+    "mac": {
+      "entitlements": "build/entitlements.mac.plist",
+      "entitlements-inherit": "build/entitlements.mac.plist"
+    }
+  },
   "scripts": {
     "start": "electron ."
   },
@@ -11,6 +17,7 @@
     "electron": "^26.2.1"
   },
   "dependencies": {
+    "electron-screenshot": "^1.0.5",
     "electron-util": "^0.17.2"
   }
 }

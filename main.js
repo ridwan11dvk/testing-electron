@@ -1,8 +1,10 @@
 let path = require("path");
 var nodeConsole = require("console");
 var myConsole = new nodeConsole.Console(process.stdout, process.stderr);
-const { app, BrowserWindow, desktopCapturer, ipcMain, systemPreferences } = require("electron");
+const { app, BrowserWindow, desktopCapturer, ipcMain, systemPreferences, screen } = require("electron");
+const electron = require('electron');
 let mainWindow = null;
+
 
 function createMainWindow() {
   mainWindow = new BrowserWindow({
@@ -12,6 +14,7 @@ function createMainWindow() {
     webPreferences: {
       nodeIntegration: true,
       preload: path.join(__dirname, "script.js"),
+      sandbox: false
     },
   });
   // desktopCapturer.getSources({ types: ['screen'] }).then(async sources => {
@@ -27,6 +30,8 @@ function createMainWindow() {
     mainWindow = null;
   });
 }
+app.commandLine.appendSwitch('high-dpi-support', '1');
+app.commandLine.appendSwitch('force-device-scale-factor', '2'); // Adjust the scale factor as needed
 
 app.on("ready", () => {
   // systemPreferences.isTrustedAccessibilityClient(true)
@@ -35,9 +40,16 @@ app.on("ready", () => {
 });
 
 ipcMain.on("screenshot:capture", (e, value) => {
+  const displays = screen.getAllDisplays();
+const primaryDisplay = screen.getPrimaryDisplay();
+
   desktopCapturer
     .getSources({
       types: ['screen'],
+      thumbnailSize: {
+        width: primaryDisplay.size.width,
+        height: primaryDisplay.size.height,
+      }
       // thumbnailSize: {width: 1920, height:1000}
     })
 
